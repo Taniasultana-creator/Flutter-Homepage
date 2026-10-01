@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // EXTRA: button e click korle ekta box e lekha dekhabe
   void showMessage(BuildContext context, String title, String message) {
     showDialog(
       context: context,
@@ -24,12 +23,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // CHANGED: background color
       backgroundColor: Colors.grey.shade900,
 
       appBar: AppBar(
         title: Text("Homepage"),
-        // CHANGED: AppBar color
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
         leading: Icon(
@@ -38,7 +35,6 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            // EXTRA: click korle message ashe
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text("Search clicked")),
@@ -47,23 +43,18 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.search),
           ),
           IconButton(
-            // EXTRA: click korle message ashe
             onPressed: () {
               showMessage(context, "Profile", "This is your profile page.");
             },
             icon: Icon(Icons.person),
           ),
         ],
-      ), // AppBar
+      ),
 
-      // backgroundColor: Colors.orange,
-
-      // EXTRA: Center + Column
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // miss er original Text (shudhu color change)
             Text(
               "Hello, welcome to our project",
               style: GoogleFonts.lobster(
@@ -73,11 +64,10 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ), // Text
+            ),
 
             SizedBox(height: 10),
 
-            // EXTRA: chhoto description
             Text(
               "Choose an option below",
               style: TextStyle(color: Colors.white70, fontSize: 16),
@@ -85,7 +75,6 @@ class HomePage extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // EXTRA: About button
             ElevatedButton(
               onPressed: () {
                 showMessage(
@@ -97,7 +86,6 @@ class HomePage extends StatelessWidget {
               child: Text("About"),
             ),
 
-            // EXTRA: Services button
             ElevatedButton(
               onPressed: () {
                 showMessage(
@@ -109,7 +97,6 @@ class HomePage extends StatelessWidget {
               child: Text("Services"),
             ),
 
-            // EXTRA: Contact button
             ElevatedButton(
               onPressed: () {
                 showMessage(
@@ -123,7 +110,6 @@ class HomePage extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // EXTRA: Row er moddhe 3ta icon
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -139,20 +125,18 @@ class HomePage extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
-        // EXTRA: click korle message ashe
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text("Add clicked")),
           );
         },
-        // CHANGED: color
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
         hoverColor: Colors.lightGreen,
         shape: BeveledRectangleBorder(),
         tooltip: "Add",
         child: Icon(Icons.add),
-      ), // FloatingActionButton
-    ); // Scaffold
+      ),
+    );
   }
 }
