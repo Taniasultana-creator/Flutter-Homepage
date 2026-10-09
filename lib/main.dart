@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tania1126/home_page.dart';
+import 'package:tania1126/Assignment_2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Assignment2(),
     );
   }
 }
