@@ -1,142 +1,77 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void showMessage(BuildContext context, String title, String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text("OK"),
-          ),
-        ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
+      backgroundColor: Color(0xFFF5F7FA),
 
       appBar: AppBar(
-        title: Text("Homepage"),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
-        leading: Icon(
-          Icons.home,
-          size: 20,
+        title: Text(
+          "Homepage",
+          style: GoogleFonts.lobster(
+            fontSize: 26,
+            color: Colors.white,
+          ),
         ),
+        backgroundColor: Color(0xFF3F51B5),
+        foregroundColor: Colors.white,
+
+        leading: Icon(
+          Icons.home_rounded,
+          size: 25,
+        ),
+
         actions: [
           IconButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("Search clicked")),
-              );
-            },
-            icon: Icon(Icons.search),
+            onPressed: () {},
+            icon: Icon(Icons.search_rounded),
+            tooltip: "Search",
           ),
+
           IconButton(
-            onPressed: () {
-              showMessage(context, "Profile", "This is your profile page.");
-            },
-            icon: Icon(Icons.person),
+            onPressed: () {},
+            icon: Icon(Icons.account_circle_rounded),
+            tooltip: "Profile",
           ),
         ],
       ),
 
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Hello, welcome to our project",
-              style: GoogleFonts.lobster(
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  color: Colors.amber,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+        child: Text(
+          "Hello welcome to our project",
+          textAlign: TextAlign.center,
+          style: GoogleFonts.lobster(
+            textStyle: TextStyle(
+              fontSize: 28,
+              color: Color(0xFF1F2937),
+              fontWeight: FontWeight.bold,
             ),
-
-            SizedBox(height: 10),
-
-            Text(
-              "Choose an option below",
-              style: TextStyle(color: Colors.white70, fontSize: 16),
-            ),
-
-            SizedBox(height: 20),
-
-            ElevatedButton(
-              onPressed: () {
-                showMessage(
-                  context,
-                  "About",
-                  "This is a simple Flutter project made for our class assignment.",
-                );
-              },
-              child: Text("About"),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                showMessage(
-                  context,
-                  "Services",
-                  "We are learning how to build mobile and web apps with Flutter.",
-                );
-              },
-              child: Text("Services"),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                showMessage(
-                  context,
-                  "Contact",
-                  "Email: example@gmail.com",
-                );
-              },
-              child: Text("Contact"),
-            ),
-
-            SizedBox(height: 20),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.favorite, color: Colors.pink, size: 30),
-                SizedBox(width: 20),
-                Icon(Icons.star, color: Colors.amber, size: 30),
-                SizedBox(width: 20),
-                Icon(Icons.thumb_up, color: Colors.lightGreen, size: 30),
-              ],
-            ),
-          ],
+          ),
         ),
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Add clicked")),
-          );
-        },
-        backgroundColor: Colors.amber,
-        foregroundColor: Colors.black,
-        hoverColor: Colors.lightGreen,
-        shape: BeveledRectangleBorder(),
+        onPressed: () {},
+        backgroundColor: Color(0xFFFF9800),
+        foregroundColor: Colors.white,
+        hoverColor: Color(0xFFFFB74D),
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+
         tooltip: "Add",
-        child: Icon(Icons.add),
+
+        child: Icon(
+          Icons.add_rounded,
+          size: 30,
+        ),
       ),
     );
   }
+
 }
