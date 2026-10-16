@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Assignment2 extends StatelessWidget {
   const Assignment2({super.key});
@@ -6,52 +7,101 @@ class Assignment2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: const Color(0xFFF2F2F0),
+
       appBar: AppBar(
-        title: Text("HomePage"),
-        backgroundColor: Colors.blueGrey.shade700, 
+        title: Text(
+          "My Home",
+          style: GoogleFonts.lobster(
+            fontSize: 28,
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: const Color(0xFF8E8E93),
         foregroundColor: Colors.white,
-        elevation: 1,
+        elevation: 5,
+
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+            tooltip: "Search",
+          ),
+
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.person),
+            tooltip: "Profile",
+          ),
         ],
       ),
 
       drawer: Drawer(
-        backgroundColor: Colors.white, 
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.blueGrey.shade700),
-              accountName: Text("Name"),
-              accountEmail: Text("Email"),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                child: Icon(Icons.person, color: Colors.blueGrey.shade700, size: 35),
+              decoration: const BoxDecoration(
+                color: Color(0xFF5F5F66),
+              ),
+              accountName: const Text(
+                "Guest User",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              accountEmail: const Text("guest@mail.com"),
+
+              currentAccountPicture: const Icon(
+                Icons.person,
+                size: 40,
+                color: Colors.white,
               ),
             ),
 
             ListTile(
-              leading: Icon(Icons.home, color: Colors.blueGrey.shade700),
-              title: Text("HomePage"),
-              hoverColor: Colors.blueGrey.shade50,
+              leading: const Icon(
+                Icons.home,
+                color: Color(0xFF8E8E93),
+              ),
+              title: const Text("Home"),
+              hoverColor: const Color(0xFFE4E4E7),
               onTap: () {},
             ),
-            Divider(height: 1),
-            ListTile(
-              leading: Icon(Icons.contact_page, color: Colors.blueGrey.shade700),
-              title: Text("Contact"),
-              hoverColor: Colors.blueGrey.shade50,
-              onTap: () {},
-            ),
-            Divider(height: 1),
 
-            Spacer(),
+            const Divider(),
+
             ListTile(
-              leading: IconButton(onPressed: () {}, icon: Icon(Icons.person, color: Colors.blueGrey.shade700)),
-              trailing: IconButton(onPressed: () {}, icon: Icon(Icons.logout, color: Colors.redAccent)),
-              title: Text("Profile"),
+              leading: const Icon(
+                Icons.contact_page,
+                color: Color(0xFF8E8E93),
+              ),
+              title: const Text("Contact Us"),
+              hoverColor: const Color(0xFFE4E4E7),
+              onTap: () {},
+            ),
+
+            const Divider(),
+
+            const Spacer(),
+
+            ListTile(
+              leading: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.person,
+                  color: Color(0xFF8E8E93),
+                ),
+              ),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.logout,
+                  color: Colors.redAccent,
+                ),
+              ),
+              title: const Text("My Profile"),
+              onTap: () {},
             ),
           ],
         ),
@@ -61,60 +111,104 @@ class Assignment2 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.blueGrey.shade600,
-                  foregroundColor: Colors.white,
-                  side: BorderSide(color: Colors.blueGrey.shade200),
-                  fixedSize: Size(130, 40),
-                  elevation: 2,
-                  shadowColor: Colors.grey.shade300,
-                ),
-                child: Text("Text Button"),
+
+            Text(
+              "Hello There!",
+              style: GoogleFonts.lobster(
+                fontSize: 40,
+                color: const Color(0xFF5F5F66),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueGrey.shade600,
-                foregroundColor: Colors.white,
-                side: BorderSide(color: Colors.blueGrey.shade200),
-                fixedSize: Size(150, 40),
-                elevation: 2,
-              ),
-              child: Text("Elevated Button"),
-            ),
-            SizedBox(height: 10),
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.blueGrey.shade700,
-                side: BorderSide(color: Colors.blueGrey.shade400),
-              ),
-              child: Text("Outlined Button"),
-            ),
-            // IconButton(onPressed: () {}, icon: Icon(Icons.login)),
-            Container(
-              height: 250,
-              width: 290,
-              margin: EdgeInsets.all(20),
-              padding: EdgeInsets.all(20),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.blueGrey.shade300, width: 2),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                gradient: LinearGradient(
-                  colors: [Colors.blueGrey.shade500, Colors.blueGrey.shade200],
-                ),
-              ),
+
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
-                "Welcome Container",
-                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                "Pick something below",
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Color(0xFF9A9AA0),
+                ),
               ),
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF5F5F66),
+                      foregroundColor: Colors.white,
+                      side: const BorderSide(
+                        color: Color(0xFFBDBDC2),
+                        width: 2,
+                      ),
+                      fixedSize: const Size(150, 80),
+                      elevation: 5,
+                      shadowColor: const Color(0xFFBDBDC2),
+                    ),
+                    child: const Text(
+                      "Tap Me",
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF8E8E93),
+                      foregroundColor: Colors.white,
+                      side: const BorderSide(
+                        color: Color(0xFFBDBDC2),
+                        width: 2,
+                      ),
+                      fixedSize: const Size(150, 80),
+                      elevation: 5,
+                      shadowColor: const Color(0xFFBDBDC2),
+                    ),
+                    child: const Text(
+                      "Go Ahead",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF6E6E75),
+                    side: const BorderSide(
+                      color: Color(0xFF8E8E93),
+                      width: 2,
+                    ),
+                  ),
+                  child: const Text(
+                    "Outline Me",
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.login),
+                    iconSize: 32,
+                    color: const Color(0xFF8E8E93),
+                    tooltip: "Login",
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -122,12 +216,20 @@ class Assignment2 extends StatelessWidget {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.blueGrey.shade700,
+        backgroundColor: const Color(0xFF5F5F66),
         foregroundColor: Colors.white,
-        hoverColor: Colors.blueGrey.shade500,
-        shape: BeveledRectangleBorder(),
+        hoverColor: const Color(0xFFBDBDC2),
+
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+
         tooltip: "Add",
-        child: Icon(Icons.add),
+
+        child: const Icon(
+          Icons.add,
+          size: 30,
+        ),
       ),
     );
   }
